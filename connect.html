@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect & Share — JNU Connect</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="mobile-topbar">
+  <div class="brand"><div class="brand-mark">JC</div><div class="brand-text"><div class="name">JNU Connect</div></div></div>
+  <button id="navToggle" aria-label="Toggle menu">☰</button>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">JC</div>
+      <div class="brand-text">
+        <div class="name">JNU Connect</div>
+        <div class="tag">Salesforce Workshop</div>
+      </div>
+    </div>
+    <div class="nav-eyebrow">Workshop Guide</div>
+    <nav class="nav">
+      <a href="index.html"><span class="num">00</span> Welcome</a>
+      <a href="data-model.html"><span class="num">01</span> Data Model</a>
+      <a href="instructions.html"><span class="num">02</span> Build Instructions</a>
+      <a href="challenges.html"><span class="num">03</span> Extra Challenges</a>
+      <a href="connect.html" class="active"><span class="num">04</span> Connect &amp; Share</a>
+    </nav>
+    <div class="sidebar-footer">
+      Hosted by <a href="https://www.linkedin.com/in/mohammadshoaib-0a8298223" target="_blank" rel="noopener">Mohammad Shoaib</a><br>
+      Associate Salesforce Developer
+    </div>
+  </aside>
+
+  <main>
+    <span class="eyebrow">Module 04</span>
+    <h1>Connect &amp; Share</h1>
+    <p class="lede">Follow the speaker for more Salesforce content, and let your own network know what you built today.</p>
+
+    <div class="social-row">
+      <a class="social-pill" href="https://www.linkedin.com/in/mohammadshoaib-0a8298223" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        Follow on LinkedIn
+      </a>
+    </div>
+
+    <h2>Share What You Built</h2>
+    <p class="muted" style="margin-top:-0.6rem;">Pick the topics you covered today, add your name, then copy the post below and share it on LinkedIn.</p>
+
+    <div style="margin: 1.2rem 0 0.4rem;">
+      <label for="nameInput" style="font-family: var(--mono); font-size:0.8rem; color: var(--muted); display:block; margin-bottom:0.4rem;">YOUR NAME (OPTIONAL)</label>
+      <input id="nameInput" type="text" placeholder="e.g. Aditi Sharma" style="width:100%; padding:0.7rem 1rem; border-radius:9px; border:1px solid var(--line); font-family: var(--body); font-size:0.95rem;">
+    </div>
+
+    <div class="chip-row">
+      <button class="chip" data-topic="Objects & Fields">Objects &amp; Fields</button>
+      <button class="chip" data-topic="Relationships">Relationships</button>
+      <button class="chip" data-topic="Validation Rules">Validation Rules</button>
+      <button class="chip" data-topic="Automation with Flow">Automation with Flow</button>
+      <button class="chip" data-topic="Approval Processes">Approval Processes</button>
+      <button class="chip" data-topic="Data Security & Profiles">Data Security &amp; Profiles</button>
+      <button class="chip" data-topic="Agentforce AI">Agentforce AI</button>
+    </div>
+
+    <textarea id="postBox" class="post-box" spellcheck="false"></textarea>
+
+    <div style="margin-top:1rem; display:flex; align-items:center; flex-wrap:wrap; gap:0.8rem;">
+      <button class="btn btn-primary" id="copyBtn">Copy Post</button>
+      <button class="btn btn-outline" id="openLinkedIn">Open LinkedIn</button>
+      <span class="copy-feedback" id="copyFeedback">Copied!</span>
+    </div>
+
+    <div class="card-soft" style="margin-top:2rem;">
+      <h3>Tip</h3>
+      <p class="muted" style="margin:0;">LinkedIn doesn't support pre-filling a post's text automatically — click <strong>Copy Post</strong>, then <strong>Open LinkedIn</strong>, click "Start a post," and paste. Feel free to add a screenshot of your JNU Connect app!</p>
+    </div>
+
+    <footer class="page-foot">Thanks for building with us today. See you at the next workshop!</footer>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

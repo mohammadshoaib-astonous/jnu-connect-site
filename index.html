@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JNU Connect — Workshop Companion</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="mobile-topbar">
+  <div class="brand"><div class="brand-mark">JC</div><div class="brand-text"><div class="name">JNU Connect</div></div></div>
+  <button id="navToggle" aria-label="Toggle menu">☰</button>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">JC</div>
+      <div class="brand-text">
+        <div class="name">JNU Connect</div>
+        <div class="tag">Salesforce Workshop</div>
+      </div>
+    </div>
+
+    <div class="nav-eyebrow">Workshop Guide</div>
+    <nav class="nav">
+      <a href="index.html" class="active"><span class="num">00</span> Welcome</a>
+      <a href="data-model.html"><span class="num">01</span> Data Model</a>
+      <a href="instructions.html"><span class="num">02</span> Build Instructions</a>
+      <a href="challenges.html"><span class="num">03</span> Extra Challenges</a>
+      <a href="connect.html"><span class="num">04</span> Connect &amp; Share</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      Hosted by <a href="https://www.linkedin.com/in/mohammadshoaib-0a8298223" target="_blank" rel="noopener">Mohammad Shoaib</a><br>
+      Associate Salesforce Developer
+    </div>
+  </aside>
+
+  <main>
+    <section class="hero">
+      <span class="eyebrow">Full-Day Workshop · Jaipur National University</span>
+      <h1>Welcome to <em>JNU Connect</em></h1>
+      <p class="lede">Your companion guide for today's Salesforce workshop. Everything you need — the data model, step-by-step build instructions, and stretch challenges — lives here so you can follow along at your own pace.</p>
+
+      <div class="erd hero-erd">
+        <div class="erd-node">School</div><span class="erd-arrow">→</span>
+        <div class="erd-node">Department</div><span class="erd-arrow">→</span>
+        <div class="erd-node">Program</div><span class="erd-arrow">→</span>
+        <div class="erd-node">Student</div>
+      </div>
+      <p class="muted" style="text-align:center; font-size:0.88rem;">The relationship chain you'll build today, using JNU's real schools and programs.</p>
+    </section>
+
+    <h2>Where to go</h2>
+    <div class="quick-links">
+      <a class="quick-link" href="data-model.html">
+        <div class="ql-num">01</div>
+        <div class="ql-title">Data Model</div>
+        <div class="ql-desc">Objects, fields, and relationships for the JNU Connect app.</div>
+      </a>
+      <a class="quick-link" href="instructions.html">
+        <div class="ql-num">02</div>
+        <div class="ql-title">Build Instructions</div>
+        <div class="ql-desc">Step-by-step click paths for every module of the day.</div>
+      </a>
+      <a class="quick-link" href="challenges.html">
+        <div class="ql-num">03</div>
+        <div class="ql-title">Extra Challenges</div>
+        <div class="ql-desc">Optional ways to extend the app after the workshop ends.</div>
+      </a>
+      <a class="quick-link" href="connect.html">
+        <div class="ql-num">04</div>
+        <div class="ql-title">Connect &amp; Share</div>
+        <div class="ql-desc">Follow along on LinkedIn and post about what you built.</div>
+      </a>
+    </div>
+
+    <h2>Today's Flow</h2>
+    <div class="card-soft">
+      <p style="margin:0 0 0.9rem;">The day moves in short concept-then-build loops — a quick explanation, then you build it live.</p>
+      <p class="muted" style="margin:0; font-family: var(--mono); font-size: 0.86rem;">
+        Foundations → Data Problem → What is CRM → Enter Salesforce → Objects & Fields → Relationships → Validation Rules → List Views → Flow (Automation) → Approval Process → Data Security → Agentforce Demo
+      </p>
+    </div>
+
+    <footer class="page-foot">JNU Connect Workshop · Built with Salesforce, no code required.</footer>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

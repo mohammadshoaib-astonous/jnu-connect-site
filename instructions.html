@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Instructions — JNU Connect</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="mobile-topbar">
+  <div class="brand"><div class="brand-mark">JC</div><div class="brand-text"><div class="name">JNU Connect</div></div></div>
+  <button id="navToggle" aria-label="Toggle menu">☰</button>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">JC</div>
+      <div class="brand-text">
+        <div class="name">JNU Connect</div>
+        <div class="tag">Salesforce Workshop</div>
+      </div>
+    </div>
+    <div class="nav-eyebrow">Workshop Guide</div>
+    <nav class="nav">
+      <a href="index.html"><span class="num">00</span> Welcome</a>
+      <a href="data-model.html"><span class="num">01</span> Data Model</a>
+      <a href="instructions.html" class="active"><span class="num">02</span> Build Instructions</a>
+      <a href="challenges.html"><span class="num">03</span> Extra Challenges</a>
+      <a href="connect.html"><span class="num">04</span> Connect &amp; Share</a>
+    </nav>
+    <div class="sidebar-footer">
+      Hosted by <a href="https://www.linkedin.com/in/mohammadshoaib-0a8298223" target="_blank" rel="noopener">Mohammad Shoaib</a><br>
+      Associate Salesforce Developer
+    </div>
+  </aside>
+
+  <main>
+    <span class="eyebrow">Module 02</span>
+    <h1>Build Instructions</h1>
+    <p class="lede">Follow along step by step. Each section builds on the last — don't skip ahead if a term feels unfamiliar, ask your table before moving on.</p>
+
+    <div class="card-soft">
+      <h3>Before You Start</h3>
+      <p class="muted" style="margin:0;">Object = a category of data (like an Excel sheet). Field = a single column. Record = one row. Lookup = a link between two objects. Everything today is built with clicks — no code.</p>
+    </div>
+
+    <div class="module-divider"><div class="dot"></div><div class="label">Setup Basics</div><div class="line"></div></div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">Find the App Launcher</div>
+        <div class="step-desc">Locate the grid icon top-left — this is how you jump between apps and objects.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">Open Setup</div>
+        <div class="step-desc">Click the gear icon top-right. This is where all "building" happens today.</div>
+        <span class="step-path">Gear Icon → Setup</span>
+      </div>
+    </div>
+
+    <div class="module-divider"><div class="dot"></div><div class="label">Objects &amp; Fields</div><div class="line"></div></div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">Create the School object</div>
+        <div class="step-desc">Create a new Custom Object, then add its four fields from the Data Model page.</div>
+        <span class="step-path">Setup → Object Manager → Create → Custom Object</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">Create Department, Program, and Student</div>
+        <div class="step-desc">Repeat the same process for each object, in order — each one needs the last one to exist first, since it links back with a Lookup field.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-title">Add Lookup relationship fields</div>
+        <div class="step-desc">On Department, add a Lookup field to School. On Program, add a Lookup to Department. On Student, add a Lookup to Program.</div>
+        <span class="step-path">Object Manager → [Object] → Fields &amp; Relationships → New → Lookup Relationship</span>
+      </div>
+    </div>
+
+    <div class="module-divider"><div class="dot"></div><div class="label">Data Entry</div><div class="line"></div></div>
+
+    <div class="step">
+      <div class="step-num">6</div>
+      <div>
+        <div class="step-title">Enter sample records</div>
+        <div class="step-desc">Use the real JNU sample data from the Data Model page — your own School, Department, and Program if you know them.</div>
+      </div>
+    </div>
+
+    <div class="module-divider"><div class="dot"></div><div class="label">Validation Rule</div><div class="line"></div></div>
+
+    <div class="step">
+      <div class="step-num">7</div>
+      <div>
+        <div class="step-title">Add a Validation Rule on Student</div>
+        <div class="step-desc">Prevent an Enrollment Year before 2007 (the year JNU was founded) or a future year.</div>
+        <span class="step-path">Object Manager → Student → Validation Rules → New</span>
+      </div>
+    </div>
+
+    <div class="module-divider"><div class="dot"></div><div class="label">List View</div><div class="line"></div></div>
+
+    <div class="step">
+      <div class="step-num">8</div>
+      <div>
+        <div class="step-title">Create a filtered List View</div>
+        <div class="step-desc">Build a view like "CSE Students Only" or "2026 Enrollments" on the Student tab.</div>
+      </div>
+    </div>
+
+    <div class="module-divider"><div class="dot"></div><div class="label">Flow (Automation)</div><div class="line"></div></div>
+
+    <div class="step">
+      <div class="step-num">9</div>
+      <div>
+        <div class="step-title">Build a Record-Triggered Flow</div>
+        <div class="step-desc">Trigger: when a Student record is created. Step 1: update Status to "Enrolled." Step 2: send an email alert to the related Department's HOD.</div>
+        <span class="step-path">Setup → Flows → New Flow → Record-Triggered Flow</span>
+      </div>
+    </div>
+
+    <div class="module-divider"><div class="dot"></div><div class="label">Approval Process</div><div class="line"></div></div>
+
+    <div class="step">
+      <div class="step-num">10</div>
+      <div>
+        <div class="step-title">Extend the Flow to submit for approval</div>
+        <div class="step-desc">When Status is "Pending Verification," auto-submit the record for approval instead of just notifying.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">11</div>
+      <div>
+        <div class="step-title">Create the Approval Process</div>
+        <div class="step-desc">Entry criteria: Status = "Pending Verification." Approver: the record's related HOD. On approval, set Status to "Enrolled"; on rejection, set it to "Rejected."</div>
+        <span class="step-path">Setup → Process Automation → Approval Processes → New</span>
+      </div>
+    </div>
+
+    <div class="module-divider"><div class="dot"></div><div class="label">Data Security</div><div class="line"></div></div>
+
+    <div class="step">
+      <div class="step-num">12</div>
+      <div>
+        <div class="step-title">Build the Role Hierarchy</div>
+        <div class="step-desc">Director → HOD → Faculty. This is what lets the Approval Process route dynamically instead of to one hardcoded person.</div>
+        <span class="step-path">Setup → Roles → Set Up Roles</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">13</div>
+      <div>
+        <div class="step-title">Create demo Users and Profiles</div>
+        <div class="step-desc">Create 2–4 test users (Director, HOD, Faculty) and assign each a matching Profile and Role.</div>
+        <span class="step-path">Setup → Users → New User</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">14</div>
+      <div>
+        <div class="step-title">Assign a distinct Page Layout to HOD</div>
+        <div class="step-desc">Give the HOD Profile a layout on Student that surfaces the Approval History clearly.</div>
+      </div>
+    </div>
+
+    <div class="module-divider"><div class="dot"></div><div class="label">Agentforce Demo</div><div class="line"></div></div>
+
+    <div class="step">
+      <div class="step-num">15</div>
+      <div>
+        <div class="step-title">Create the JNU Connect Assistant agent</div>
+        <div class="step-desc">Topic 1: answer questions about Programs and Schools. Topic 2: let a student check their own enrollment status.</div>
+        <span class="step-path">Setup → Agentforce Agents → New Agent</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">16</div>
+      <div>
+        <div class="step-title">Test-drive the agent live</div>
+        <div class="step-desc">Ask it a program question, then an out-of-scope question, to see the guardrail decline gracefully.</div>
+      </div>
+    </div>
+
+    <footer class="page-foot">Finished early? Head to <a href="challenges.html" style="color:var(--secondary); font-weight:600;">Extra Challenges →</a></footer>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

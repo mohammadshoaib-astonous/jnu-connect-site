@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Extra Challenges — JNU Connect</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="mobile-topbar">
+  <div class="brand"><div class="brand-mark">JC</div><div class="brand-text"><div class="name">JNU Connect</div></div></div>
+  <button id="navToggle" aria-label="Toggle menu">☰</button>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">JC</div>
+      <div class="brand-text">
+        <div class="name">JNU Connect</div>
+        <div class="tag">Salesforce Workshop</div>
+      </div>
+    </div>
+    <div class="nav-eyebrow">Workshop Guide</div>
+    <nav class="nav">
+      <a href="index.html"><span class="num">00</span> Welcome</a>
+      <a href="data-model.html"><span class="num">01</span> Data Model</a>
+      <a href="instructions.html"><span class="num">02</span> Build Instructions</a>
+      <a href="challenges.html" class="active"><span class="num">03</span> Extra Challenges</a>
+      <a href="connect.html"><span class="num">04</span> Connect &amp; Share</a>
+    </nav>
+    <div class="sidebar-footer">
+      Hosted by <a href="https://www.linkedin.com/in/mohammadshoaib-0a8298223" target="_blank" rel="noopener">Mohammad Shoaib</a><br>
+      Associate Salesforce Developer
+    </div>
+  </aside>
+
+  <main>
+    <span class="eyebrow">Module 03</span>
+    <h1>Extra Challenges</h1>
+    <p class="lede">Finished the core build? Extend JNU Connect on your own — at home, or in the time left today. These aren't required, but they'll teach you what comes next.</p>
+
+    <div class="challenge">
+      <span class="level easy">Easy</span>
+      <h3>Add a Faculty object</h3>
+      <p class="muted" style="margin:0;">If you skipped it during the main build, add the Faculty object now with a Lookup to Department. Link a few faculty members to your CSE department.</p>
+    </div>
+
+    <div class="challenge">
+      <span class="level easy">Easy</span>
+      <h3>Build a second List View</h3>
+      <p class="muted" style="margin:0;">Create a view showing only PG programs, or only students enrolled in the current year.</p>
+    </div>
+
+    <div class="challenge">
+      <span class="level medium">Medium</span>
+      <h3>Add a Report and Dashboard</h3>
+      <p class="muted" style="margin:0;">Build a report like "Students by Program" or "Students by School," then place it on a simple Dashboard with a chart.</p>
+    </div>
+
+    <div class="challenge">
+      <span class="level medium">Medium</span>
+      <h3>Assemble a Lightning App Page</h3>
+      <p class="muted" style="margin:0;">Use App Builder to drag a List View, a Chart, and a Rich Text welcome banner onto one home page for JNU Connect.</p>
+    </div>
+
+    <div class="challenge">
+      <span class="level medium">Medium</span>
+      <h3>Add a second Approval step</h3>
+      <p class="muted" style="margin:0;">Extend the Approval Process so a rejected application can be resubmitted with updated information, instead of being a dead end.</p>
+    </div>
+
+    <div class="challenge">
+      <span class="level hard">Hard</span>
+      <h3>Add a Scholarship object</h3>
+      <p class="muted" style="margin:0;">Create a new object linked to Student, tracking scholarship applications. Route it through its own Approval Process with a different approver — the Director instead of the HOD.</p>
+    </div>
+
+    <div class="challenge">
+      <span class="level hard">Hard</span>
+      <h3>Expand the Agentforce agent</h3>
+      <p class="muted" style="margin:0;">Add a third Topic that lets a student ask "What scholarships am I eligible for?" — grounded in the Scholarship object above.</p>
+    </div>
+
+    <div class="challenge">
+      <span class="level hard">Hard</span>
+      <h3>Build an Experience Cloud portal</h3>
+      <p class="muted" style="margin:0;">Give students their own limited-access login where they can view only their own Student record and enrollment status — a real look at how external users interact with Salesforce.</p>
+    </div>
+
+    <footer class="page-foot">Built something? Head to <a href="connect.html" style="color:var(--secondary); font-weight:600;">Connect &amp; Share →</a> and post about it.</footer>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

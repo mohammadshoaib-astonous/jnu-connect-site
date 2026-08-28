@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Model — JNU Connect</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="mobile-topbar">
+  <div class="brand"><div class="brand-mark">JC</div><div class="brand-text"><div class="name">JNU Connect</div></div></div>
+  <button id="navToggle" aria-label="Toggle menu">☰</button>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">JC</div>
+      <div class="brand-text">
+        <div class="name">JNU Connect</div>
+        <div class="tag">Salesforce Workshop</div>
+      </div>
+    </div>
+    <div class="nav-eyebrow">Workshop Guide</div>
+    <nav class="nav">
+      <a href="index.html"><span class="num">00</span> Welcome</a>
+      <a href="data-model.html" class="active"><span class="num">01</span> Data Model</a>
+      <a href="instructions.html"><span class="num">02</span> Build Instructions</a>
+      <a href="challenges.html"><span class="num">03</span> Extra Challenges</a>
+      <a href="connect.html"><span class="num">04</span> Connect &amp; Share</a>
+    </nav>
+    <div class="sidebar-footer">
+      Hosted by <a href="https://www.linkedin.com/in/mohammadshoaib-0a8298223" target="_blank" rel="noopener">Mohammad Shoaib</a><br>
+      Associate Salesforce Developer
+    </div>
+  </aside>
+
+  <main>
+    <span class="eyebrow">Module 01</span>
+    <h1>The Data Model</h1>
+    <p class="lede">Four connected objects, modeled on JNU's real schools, departments, and programs. Each object links to the one before it — build them in this order.</p>
+
+    <div class="erd">
+      <div class="erd-node">School</div><span class="erd-arrow">→</span>
+      <div class="erd-node">Department</div><span class="erd-arrow">→</span>
+      <div class="erd-node">Program</div><span class="erd-arrow">→</span>
+      <div class="erd-node">Student</div><span class="erd-arrow">→</span>
+      <div class="erd-node optional">Faculty*</div>
+    </div>
+    <p class="muted" style="text-align:center; font-size:0.85rem; margin-top:-1rem;">*Faculty is optional — build it only if time allows.</p>
+
+    <div class="model-block">
+      <div class="model-head">
+        <span class="model-badge">01</span>
+        <span class="model-title">School</span>
+        <span class="model-link">Master object</span>
+      </div>
+      <table class="fields">
+        <tr><th>Field</th><th>Type</th><th>Notes</th></tr>
+        <tr><td class="field-name">School Name</td><td class="field-type">Text</td><td class="field-note">e.g. School of Engineering &amp; Technology</td></tr>
+        <tr><td class="field-name">Dean / Director</td><td class="field-type">Text</td><td class="field-note">—</td></tr>
+        <tr><td class="field-name">Established Year</td><td class="field-type">Number</td><td class="field-note">—</td></tr>
+        <tr><td class="field-name">Campus Location</td><td class="field-type">Picklist</td><td class="field-note">JNU has 4 campuses</td></tr>
+      </table>
+    </div>
+
+    <div class="model-block">
+      <div class="model-head">
+        <span class="model-badge">02</span>
+        <span class="model-title">Department</span>
+        <span class="model-link">Lookup → School</span>
+      </div>
+      <table class="fields">
+        <tr><th>Field</th><th>Type</th><th>Notes</th></tr>
+        <tr><td class="field-name">Department Name</td><td class="field-type">Text</td><td class="field-note">e.g. Computer Science Engineering</td></tr>
+        <tr><td class="field-name">School</td><td class="field-type">Lookup</td><td class="field-note">→ School</td></tr>
+        <tr><td class="field-name">HOD Name</td><td class="field-type">Text</td><td class="field-note">—</td></tr>
+      </table>
+    </div>
+
+    <div class="model-block">
+      <div class="model-head">
+        <span class="model-badge">03</span>
+        <span class="model-title">Program</span>
+        <span class="model-link">Lookup → Department</span>
+      </div>
+      <table class="fields">
+        <tr><th>Field</th><th>Type</th><th>Notes</th></tr>
+        <tr><td class="field-name">Program Name</td><td class="field-type">Text</td><td class="field-note">e.g. B.Tech CSE</td></tr>
+        <tr><td class="field-name">Department</td><td class="field-type">Lookup</td><td class="field-note">→ Department</td></tr>
+        <tr><td class="field-name">Level</td><td class="field-type">Picklist</td><td class="field-note">UG / PG / PhD / Diploma</td></tr>
+        <tr><td class="field-name">Duration (Years)</td><td class="field-type">Number</td><td class="field-note">—</td></tr>
+      </table>
+    </div>
+
+    <div class="model-block">
+      <div class="model-head">
+        <span class="model-badge">04</span>
+        <span class="model-title">Student</span>
+        <span class="model-link">Lookup → Program</span>
+      </div>
+      <table class="fields">
+        <tr><th>Field</th><th>Type</th><th>Notes</th></tr>
+        <tr><td class="field-name">Student Name</td><td class="field-type">Text</td><td class="field-note">—</td></tr>
+        <tr><td class="field-name">Roll Number</td><td class="field-type">Text (Unique)</td><td class="field-note">—</td></tr>
+        <tr><td class="field-name">Program</td><td class="field-type">Lookup</td><td class="field-note">→ Program</td></tr>
+        <tr><td class="field-name">Enrollment Year</td><td class="field-type">Number</td><td class="field-note">—</td></tr>
+        <tr><td class="field-name">Email</td><td class="field-type">Email</td><td class="field-note">—</td></tr>
+      </table>
+    </div>
+
+    <div class="model-block">
+      <div class="model-head">
+        <span class="model-badge" style="background:var(--card-2); color:var(--muted);">05</span>
+        <span class="model-title" style="color:var(--muted);">Faculty</span>
+        <span class="model-link">Optional · Lookup → Department</span>
+      </div>
+      <table class="fields">
+        <tr><th>Field</th><th>Type</th><th>Notes</th></tr>
+        <tr><td class="field-name">Faculty Name</td><td class="field-type">Text</td><td class="field-note">—</td></tr>
+        <tr><td class="field-name">Department</td><td class="field-type">Lookup</td><td class="field-note">→ Department</td></tr>
+        <tr><td class="field-name">Designation</td><td class="field-type">Picklist</td><td class="field-note">Professor / Associate Professor / Assistant Professor</td></tr>
+        <tr><td class="field-name">Specialization</td><td class="field-type">Text</td><td class="field-note">—</td></tr>
+      </table>
+    </div>
+
+    <h2>Sample Records to Use</h2>
+    <div class="card-soft">
+      <h3>Schools</h3>
+      <p class="muted">School of Engineering &amp; Technology · School of Computer &amp; Systems Sciences · School of Business &amp; Management · School of Pharmaceutical Sciences · School of Education · Seedling School of Law and Governance</p>
+      <h3>Departments (under Engineering)</h3>
+      <p class="muted">Computer Science Engineering · Electronics &amp; Communication Engineering · Mechanical Engineering · Civil Engineering · Biotechnology</p>
+      <h3>Programs (under CSE)</h3>
+      <p class="muted">B.Tech CSE (UG, 4 years) · M.Tech CSE (PG, 2 years)</p>
+    </div>
+
+    <footer class="page-foot">Next up: <a href="instructions.html" style="color:var(--secondary); font-weight:600;">Build Instructions →</a></footer>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
